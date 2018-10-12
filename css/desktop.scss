@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+@import '../../rbkit/framework/scss/config-mm';
+@import '../../rbkit/framework/scss/global';
+@import '../../rbkit/framework/scss/modules/accordion';
+@import '../../rbkit/framework/scss/modules/nav';
+@import '../../rbkit/framework/scss/modules/product-changer';
+@import '../../rbkit/framework/scss/modules/product-slider';
+@import '../../rbkit/framework/scss/modules/slider';
+@import '../../rbkit/framework/scss/modules/video';
+@import '../../rbkit/framework/scss/modules/parallax';
+@import '../../rbkit/framework/scss/modules/layer';
+@import '../../rbkit/framework/scss/modules/respo-table';
+
+$base-padding: 20px;
+
+@import "settings";
+@import "layout";
+
+#produktdetail_seite_outlet-top,
+#produktbeschreibung,
+#flix-inpage,
+#wc-power-page,
+.loadbeeTabContent {
+    display: none;
+}
+
+.rbkit-container {
+    width: 708px !important;
+    border: none !important;
+
+    @include respo-width(L) {
+        width: 804px !important;
+    }
+    border: none;
+
+    .pds-feature{
+        h2, p{
+            color: #000 !important;
+        }
+
+        article{
+            padding: 20px;
+        }
+    }
+    .rbkit-slider, .pds-feature{
+        margin-bottom: 10px !important;
+    }
+    .rbkit-slider, .pds-feature, #video-1{
+        border: 1px solid #63bfb7 !important;
+    }
+    section:not(:last-child){
+        margin-bottom: 10px !important;
+    }
+    .rbkit-slider {
+        margin-bottom: 10px !important;
+        padding-bottom: 0px !important;
+        .slick-dots{
+            display: none !important;
+        }
+
+        .slide-top{
+            .slick-arrow{
+             top: 118% !important;
+            }
+        }
+
+        .slidebottom{
+            position: relative;
+            padding: 15px 60px !important;
+            height: 155px;
+            background-color: #63bfb7;
+            img{
+                width: 100%;
+                height: 128px;
+                margin: 0px !important;
+            }
+
+            .slick-arrow{
+                display: none !important;
+            }
+
+            .slick-slide:nth-child(2), .slick-slide:nth-child(3), .slick-slide:nth-child(3){
+                width: 230px !important;
+            }
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    margin-top: -15px;
+                    margin-left: 80px;
+                    z-index: 1;
+                    border-left: 30px solid transparent;
+                    border-right: 30px solid transparent;
+                    border-top: 30px solid #f2f2f2;
+                    border-bottom: 30px solid transparent;
+                }
+
+
+        }
+    }
+}
+
+
+
+

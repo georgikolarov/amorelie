@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+@import '../../rbkit/framework/scss/config-mm-mobile';
+@import '../../rbkit/framework/scss/global';
+@import '../../rbkit/framework/scss/modules/accordion';
+@import '../../rbkit/framework/scss/modules/slider';
+@import '../../rbkit/framework/scss/modules/video';
+@import '../../rbkit/framework/scss/modules/layer';
+@import '../../rbkit/framework/scss/modules/respo-table';
+
+$base-padding: 10px;
+
+@import "settings";
+@import "layout";
+
+.rbkit-container {
+    padding-right: 0px !important;
+    border: none;
+    section {
+        margin: 0 !important;
+    }
+    margin: 0 !important;
+    ul, dl, dd {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .pds-feature {
+        .feature-text {
+            h2 {
+                margin-top: 0;
+            }
+        }
+        &.left,
+        &.right {
+            .rbkit-layout {
+                flex-direction: column;
+            }
+
+        }
+        &.arrows {
+            &.left,
+            &.right {
+                .feature-text {
+                    &::before {
+                        top: 0;
+                        left: 50%;
+                        margin-left: -20px;
+                        border-style: solid;
+                        border-width: 0 20px 20px 20px;
+                        border-color: transparent transparent $background-alt-color transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#mobile-pds-header {
+    width: 100vw;
+}
+
+
+
+

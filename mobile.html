@@ -1,0 +1,63 @@
+<link id="rbkit-css" href="css/mobile.css" rel="stylesheet" type="text/css">
+<script>
+    $(function () {
+        $('.rbkit-container').parent().attr('style', 'margin: 0; padding: 0');
+        $('.rbkit-container').parent().parent().attr('style', 'margin: 0; padding: 0');
+        $('.rbkit-container').parent().parent().parent().attr('style', 'margin: 0; padding: 0');
+        $('.category-breadcrumb-container').before($('#mobile-pds-header'));
+        $('#pds-table-section').before($('#pds-video-section'));
+    });
+</script>
+<img src="img/mobile/header_mobile.jpg" id="mobile-pds-header">
+<main class="rbkit-container">
+
+    <!--MAIN-CONTENT-START-->
+
+    <!--MAIN-CONTENT-END-->
+
+    <section id="pds-video-section">
+        <div id="video-1"></div>
+    </section>
+
+    <section id="pds-table-section" class="rbkit-table"></section>
+</main>
+<script>
+    $(function () {
+
+        window.rbkit.respotable.config = {
+            table: [
+                ["", "Titel_1", "Titel_2"],
+                ["", "img/tab-1.jpg", "img/tab-2.jpg"],
+                ["Feature_1", "text", "text"],
+                ["Feature_2", false, true],
+                ["", '<a href="#" class="button background-type-1 button-add-to-basket" style="padding: 5px 10px" id="add-to-cart-button"><span>In den Warenkorb</span></a>', "//www.mediamarkt.de/catentry/2249370"]
+
+
+            ],
+            target: "#pds-table-section",
+            breakpoint5: 1100,
+            breakpoint4: 900,
+            breakpoint3: 600,
+            breakpoint3top: 600
+        };
+
+        var requestkey = '##cl!##_1499331396.4381';
+        window.rbkit.integration.addCliplisterPlayer(requestkey);
+
+        var category_id = '460700';
+        var catentry_id = '4122591';
+        var article_number = '2249372';
+        setTimeout(window.rbkit.integration.addCartParams, 1000, category_id, catentry_id, article_number, 1);
+
+        var category = window.rbkit.tracking.CATEGORY.produktspecial;
+        window.rbkit.tracking.init(category);
+    });
+
+</script>
+
+<!--SCRIPTS-BEGIN-->
+<script src="../rbkit/framework/js/rbkit.min.js"></script>
+<script src="../rbkit/framework/js/rbkit.integration.min.js"></script>
+<!--SCRIPTS-END-->
+
+<script src="https://mycliplister.com/static/clplayer/cllib.inc.min.js"></script>

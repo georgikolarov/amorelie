@@ -1,0 +1,91 @@
+<link href="css/desktop.css" rel="stylesheet" type="text/css">
+
+
+
+<main class="rbkit-container">
+
+    <!--MAIN-CONTENT-START-->
+
+    <div class="rbkit-slider">
+        <div class="slides slide-top">
+            <div><img data-lazy="img/slider_01.png"></div>
+            <div><img data-lazy="img/slider_02.png"></div>
+            <div><img data-lazy="img/slider_03.png"></div>
+        </div>
+
+        <div class="slides slidebottom">
+            <div><img data-lazy="img/1.jpg"></div>
+            <div><img data-lazy="img/2.jpg"></div>
+            <div><img data-lazy="img/3.jpg"></div>
+        </div>
+    </div>
+
+    <section class="pds-feature">
+                <article>
+                    <h2>Der erotische Amorelie Adventskalender.</h2>
+                    <p>An jedem Tag zur Adventszeit ein neues Türchen öffnen und erkunden was sich dahinter verbirgt. Mit 24 hochwertigen Produkten im Warenwert von € 440,- hält der erotische Adventskalender für Erwachsene einige Überraschungen bereit. So können Paare und Singles ihr Liebesleben neu entdecken. Eine handverlesene Produktauswahl, die verschwiegene Aufmachung und das hochwertige Design machen den Kalender zu einem ganz besonderen Geschenk für Paare und Singles.</p>
+                </article>
+    </section>
+
+    <section id="pds-video-section">
+        <div id="video-1"></div>
+    </section>
+
+    <section class="pds-feature">
+        <article>
+            <h2>App und Magazin mit Expertentipps.</h2>
+            <p>Der Kalender wird durch ein eigenes Lifestyle-Magazin und eine interaktive App  - ab November im App- und Google Play Store verfügbar - begleitet. Über diese können Sie ganz einfach jede Menge Informationen zu den enthaltenen Überraschungen und Tipps für mehr Spaß im gemeinsamen Liebesleben erhalten. Und auch in diesem Jahr sind wieder Top-Marken in dem Kalender enthalten, die für beste Qualität und ihr Know-how bekannt sind.</p>
+        </article>
+    </section>
+
+    <!--MAIN-CONTENT-END-->
+</main>
+
+
+<script>
+    $(function () {
+
+        $('.rbkit-slider .slide-top').slick({
+            dots: true,
+            lazyLoad: 'progressive',
+            prevArrow: '<div class="prev"></div>',
+            nextArrow: '<div class="next"></div>',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            infinite: true
+        });
+        $('.rbkit-slider .slidebottom').slick({
+            dots: true,
+            lazyLoad: 'progressive',
+            prevArrow: '<div class="prev"></div>',
+            nextArrow: '<div class="next"></div>',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            infinite: true
+        });
+
+        var requestkey = '##cl!##_1499331396.4381';
+        window.rbkit.integration.addCliplisterPlayer(requestkey);
+
+        var category_id = '460700';
+        var catentry_id = '4122533';
+        var article_number = '2249370';
+        setTimeout(window.rbkit.integration.addCartParams, 1000, category_id, catentry_id, article_number, 0);
+
+        var category = window.rbkit.tracking.CATEGORY.produktspecial;
+        window.rbkit.tracking.init(category);
+    });
+
+</script>
+
+
+<!--SCRIPTS-BEGIN-->
+<script src="../rbkit/framework/js/rbkit.min.js"></script>
+<script src="../rbkit/framework/js/rbkit.integration.min.js"></script>
+<!--SCRIPTS-END-->
+
+<script src="https://mycliplister.com/static/clplayer/cllib.inc.min.js"></script>

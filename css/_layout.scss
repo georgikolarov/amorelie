@@ -1,0 +1,235 @@
+.rbkit-container {
+    color: $text-color;
+    background-color: $background-color;
+    section {
+        overflow: hidden;
+        &:not(:last-child) {
+            margin-bottom: $base-padding;
+        }
+    }
+    .rbkit-layout {
+        display: block;
+        flex-direction: column;
+        li {
+            flex: 1;
+        }
+        &.features{
+            display: flex;
+        }
+    }
+    .feature-text {
+        position: relative;
+
+        article {
+            padding: $base-padding;
+            height: 100%;
+            background-color: $background-alt-color;
+            h2 {
+                margin-top: -7px;
+                color: $text-headline-color;
+            }
+            .bullet-list {
+                li {
+                    position: relative;
+                    padding: 0 0 5px 20px;
+                    &::before {
+                        position: absolute;
+                        left: 0;
+                        top: 2px;
+                        content: '\e634';
+                        font-family: mm-icons;
+                        font-size: 14px;
+                        padding-right: 5px;
+                        color: $bullet-list-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .pds-feature {
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        &.arrows {
+            .feature-text {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    //
+                    top: -20px;
+                    left: 50%;
+                    right: auto;
+                    margin: 0 0 0 -20px;
+                    border-width: 0 20px  20px 20px;
+                    border-color: transparent transparent $background-alt-color transparent;
+                }
+            }
+            &.right {
+                .rbkit-layout{
+                    display: flex;
+                }
+                .feature-text {
+                    &::before {
+                        top: 50%;
+                        right: -20px;
+                        left: auto;
+                        margin: -20px 0 0 0;
+                        border-width: 20px 0 20px 20px;
+                        border-color: transparent transparent transparent $background-alt-color;
+                    }
+                }
+            }
+            &.left {
+                .rbkit-layout{
+                    display: flex;
+                }
+                .feature-text {
+                    &::before {
+                        top: 50%;
+                        left: -20px;
+                        right: auto;
+                        margin: -20px 0 0 0;
+                        border-width: 20px 20px 20px 0;
+                        border-color: transparent $background-alt-color transparent transparent;
+                    }
+                }
+            }
+        }
+
+        &.right {
+            .rbkit-layout {
+                flex-direction: row-reverse;
+            }
+
+        }
+        &.left {
+            .rbkit-layout {
+                flex-direction: row;
+            }
+
+        }
+    }
+
+
+
+    $table-header-color: #000;
+
+    $table-even-color: #f2f2f2;
+    $text-even-color: #000;
+    $icon-even-true-color: default;
+    $icon-even-false-color: default;
+
+    $table-odd-color: #fff;
+    $text-odd-color: #000;
+    $icon-odd-true-color: default;
+    $icon-odd-false-color: default;
+
+
+    .rbkit-table {
+        margin: 0;
+        padding: 10px;
+        background-color: $table-odd-color;
+        .table-container{
+            >div{
+                border-color: $table-odd-color;
+                &[data-col="0"] {
+                    color: $table-header-color !important;
+                    font-family: mm-text-bold, MMTextProWeb-Bold;
+                    justify-content: flex-end;
+                    text-align: right;
+                    padding: 10px 10px 10px 0;
+                    background-color: $table-odd-color !important;
+                }
+                span{
+                    max-width: 100%;
+                }
+            }
+            &:nth-child(even){
+                >div{
+                    background-color: $table-even-color;
+                    color: $text-even-color;
+                    .check:before {
+                        color: $icon-even-true-color;
+                    }
+                    .minus:before {
+                        color: $icon-even-false-color;
+                    }
+                }
+            }
+            &:nth-child(odd){
+                >div{
+                    background-color: $table-odd-color;
+                    color: $text-odd-color;
+                    .check:before {
+                        color: $icon-odd-true-color;
+                    }
+                    .minus:before {
+                        color: $icon-odd-false-color;
+                    }
+                }
+            }
+            &[data-row="0"]{
+                >div{
+                    color: $table-header-color;
+                }
+            }
+
+        }
+        .table-select{
+            >div{
+                >div {
+                    border: 2px solid $table-odd-color;
+                    background: $table-even-color;
+                    p, a{
+                        color: $table-header-color;
+                    }
+                    .open-select{
+                        &:before{
+                            color: $table-header-color;
+                        }
+                    }
+                    &.table-select-0{
+                        background-color: $table-odd-color;
+                    }
+                }
+            }
+        }
+        &.col3top, &.col2top{
+            .table-container{
+                >div{
+                    background-color: $table-even-color;
+                    &[data-col="0"] {
+                        justify-content: center;
+                        text-align: center;
+                        padding: 10px 5px 10px 5px;
+                        background-color: $table-odd-color !important;
+                    }
+                }
+
+
+            }
+        }
+        &.col5, &.col4, &.col3{
+            .table-container{
+
+                &:nth-child(even){
+                    >div{
+                        padding: 14px 5px !important;
+                    }
+                }
+
+
+            }
+        }
+    }
+
+
+
+}

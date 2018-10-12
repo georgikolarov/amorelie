@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+@import '../../rbkit/framework/scss/config-mm';
+@import '../../rbkit/framework/scss/global';
+@import '../../rbkit/framework/scss/pds';
+@import '../../rbkit/framework/scss/modules/accordion';
+@import '../../rbkit/framework/scss/modules/nav';
+@import '../../rbkit/framework/scss/modules/product-changer';
+@import '../../rbkit/framework/scss/modules/product-slider';
+@import '../../rbkit/framework/scss/modules/slider';
+@import '../../rbkit/framework/scss/modules/video';
+@import '../../rbkit/framework/scss/modules/parallax';
+@import '../../rbkit/framework/scss/modules/layer';
+
+.rbkit-container {
+    height: 1000px; //change this to actual height!
+    margin: 0;
+    border: none !important;
+    * {
+        box-sizing: border-box;
+    }
+    section {
+        margin: 0;
+    }
+}
+
+
+
+
